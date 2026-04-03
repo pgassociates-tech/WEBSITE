@@ -15,7 +15,7 @@ body {
 
 /* Header */
 header {
-  background-color: #FFFFFF;
+  background-color: #FFFFFF; /* white background */
   border-bottom: 2px solid #C9A646;
   padding: 1rem 2rem;
   display: flex;
@@ -30,8 +30,8 @@ header {
 }
 
 .logo-box {
-  background: linear-gradient(135deg, #0A1F44, #1E3A70);
-  color: #FFFFFF;
+  background: #0A1F44; /* solid blue box */
+  color: #FFFFFF; /* white text */
   font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -43,13 +43,15 @@ header {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   margin: 0;
-  color: #0A1F44;
+  color: #000000; /* black bold */
+  font-weight: bold;
 }
 
 .logo-text p {
   font-size: 0.9rem;
-  color: #C9A646;
+  color: #000000; /* black normal */
   margin: 0;
+  font-weight: normal;
 }
 
 /* Navigation */
@@ -60,33 +62,32 @@ nav ul {
 }
 
 nav ul li a {
-  color: #0A1F44;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 0.8rem;
   transition: 0.3s;
+  color: #000000; /* default black font */
 }
 
-nav ul li a.active {
-  color: #C9A646;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  color: #C9A646;
-}
-
-/* Contact Us Button in Nav */
-nav ul li a.button {
-  background-color: #0A1F44;
-  color: #FFFFFF;
+/* Services button */
+nav ul li a.services-button {
+  background-color: #0A1F44; /* blue background */
+  color: #C9A646; /* golden font */
   border-radius: 4px;
   padding: 0.5rem 1rem;
 }
 
-nav ul li a.button:hover {
-  background-color: #C9A646;
-  color: #0A1F44;
+/* Contact Us button */
+nav ul li a.contact-button {
+  background-color: #0A1F44; /* blue background */
+  color: #FFFFFF; /* white font */
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+/* Hover effects */
+nav ul li a:hover {
+  opacity: 0.8;
 }
 
 /* Banner */
@@ -285,6 +286,7 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
+
 /* Hero Right Card */
 .hero-right { flex: 1; display: flex; justify-content: center; align-items: center; }
 .info-card {
