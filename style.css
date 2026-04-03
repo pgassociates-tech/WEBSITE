@@ -15,33 +15,78 @@ body {
 
 /* Header */
 header {
-  background-color: #0A1F44;
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #C9A646;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box {
+  background: linear-gradient(135deg, #0A1F44, #1E3A70);
   color: #FFFFFF;
-  padding: 1rem;
-}
-
-header .site-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-right: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
+.logo-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+  color: #0A1F44;
+}
+
+.logo-text p {
+  font-size: 0.9rem;
+  color: #C9A646;
+  margin: 0;
+}
+
+/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
-  margin-top: 0.5rem;
 }
 
 nav ul li a {
-  color: #FFFFFF;
+  color: #0A1F44;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  transition: 0.3s;
 }
 
-nav ul li a.active,
+nav ul li a.active {
+  color: #C9A646;
+  font-weight: bold;
+}
+
 nav ul li a:hover {
   color: #C9A646;
+}
+
+/* Contact Us Button in Nav */
+nav ul li a.button {
+  background-color: #0A1F44;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li a.button:hover {
+  background-color: #C9A646;
+  color: #0A1F44;
 }
 
 /* Banner */
@@ -57,33 +102,40 @@ nav ul li a:hover {
   font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-/* Intro Section */
-.intro {
-  padding: 2rem;
-  text-align: center;
-  font-size: 1.1rem;
+.banner p {
   max-width: 900px;
   margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* Highlights */
-.highlights {
+/* Values Section */
+.values {
   display: flex;
   justify-content: space-around;
-  background-color: #F5F5F5;
+  background-color: #0A1F44;
+  color: #FFFFFF;
   padding: 2rem;
 }
 
-.highlight {
-  background-color: #FFFFFF;
-  border: 1px solid #C9A646;
-  padding: 1rem;
+.value {
+  width: 30%;
   text-align: center;
-  font-weight: bold;
-  width: 20%;
-  border-radius: 5px;
+}
+
+.value h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #C9A646;
+}
+
+.value p {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 /* Quick Links */
@@ -106,6 +158,30 @@ nav ul li a:hover {
 .button:hover {
   background-color: #0A1F44;
   color: #FFFFFF;
+}
+
+/* About Page */
+.about {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.about ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.about ul li {
+  margin-bottom: 0.5rem;
+  color: #0A1F44;
+  font-weight: 500;
 }
 
 /* Services Page */
@@ -131,35 +207,6 @@ nav ul li a:hover {
   font-size: 1.4rem;
   color: #0A1F44;
   margin-bottom: 0.5rem;
-}
-
-.services ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-}
-
-/* About Us Page */
-.about {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.about h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.about ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-}
-
-.about ul li {
-  margin-bottom: 0.5rem;
-  color: #0A1F44;
-  font-weight: 500;
 }
 
 /* Team Page */
