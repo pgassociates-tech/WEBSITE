@@ -288,35 +288,34 @@ footer {
 /* Hero Right Card */
 .hero-right { flex: 1; display: flex; justify-content: center; align-items: center; }
 .info-card {
-  background-color: #C9A646; /* golden background */
-  color: #0A1F44;
+  background-color: #0A1F44; /* dark blue background */
+  color: #FFFFFF;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   max-width: 400px;
-  text-align: center;
+  text-align: left; /* left alignment */
 }
 .ca-logo {
   max-width: 120px;
-  margin: 0 auto 1rem auto;
+  margin: 0 0 1rem 0; /* left aligned */
   display: block;
 }
 .empanelled-heading {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
-  color: #0A1F44;
+  color: #C9A646; /* golden accent */
   margin-top: 1rem;
 }
 .empanelled-list {
   list-style: none;
   padding: 0;
   margin: 1rem 0;
-  text-align: left;
 }
 .empanelled-list li {
   font-size: 1rem;
   margin: 0.5rem 0;
-  color: #0A1F44;
+  color: #FFFFFF;
   font-weight: 600;
 }
 .years-box {
@@ -325,13 +324,13 @@ footer {
 .industry-heading {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  color: #0A1F44;
+  color: #C9A646; /* golden accent */
   margin-bottom: 0.5rem;
 }
 .years-box h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
-  color: #FFFFFF; /* white text for contrast */
+  color: #FFFFFF;
 }
 .years-box p {
   font-size: 1rem;
