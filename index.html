@@ -32,35 +32,36 @@
     </nav>
   </header>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h2>DELIVERING PERFECTION IN GOVERNANCE THROUGH ASSURANCE AND ADVISORY</h2>
-    <p>
-      A Multi‑Partner Chartered Accountancy Practice Specializing In Tax, Assurance, Regulatory, And Financial Advisory Solutions — Engineered With Methodological Precision, Governance‑Aligned Frameworks, And Accountability At Every Stage Of Engagement.
-    </p>
-  </section>
-
-  <!-- Values Section -->
-  <section class="values">
-    <div class="value">
-      <h3>Client‑Centric</h3>
-      <p>Partner‑led engagement model ensuring direct communication and accountability.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="established">Established 2016</p>
+      <h2>Excellence in Financial Governance</h2>
+      <p>A multi‑partner Chartered Accountancy firm delivering integrated tax, assurance, regulatory, and financial advisory services with precision and accountability.</p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="button">Get Started</a>
+        <a href="services.html" class="button-outline">Our Services</a>
+      </div>
     </div>
-    <div class="value">
-      <h3>Risk‑Focused</h3>
-      <p>Comprehensive risk assessment and mitigation strategies for every engagement.</p>
+    <div class="hero-right">
+      <div class="info-card">
+        <img src="images/ca-logo.png" alt="CA India Logo" class="ca-logo">
+        <div class="card-items">
+          <div class="card-item">
+            <h3>ICAI</h3>
+            <p>Empanelled</p>
+          </div>
+          <div class="card-item">
+            <h3>RBI</h3>
+            <p>Empanelled</p>
+          </div>
+          <div class="card-item">
+            <h3 id="years">0+</h3>
+            <p>Years</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="value">
-      <h3>Quality Assured</h3>
-      <p>Audit‑grade documentation and structured methodologies for all deliverables.</p>
-    </div>
-  </section>
-
-  <!-- Quick Links -->
-  <section class="quick-links">
-    <a href="services.html" class="button">Services</a>
-    <a href="about.html" class="button">About Us</a>
-    <a href="contact.html" class="button">Contact</a>
   </section>
 
   <!-- Footer -->
@@ -68,5 +69,17 @@
     <p>Empanelled With ICAI And RBI</p>
     <p>&copy; 2026 Prakhar Gupta & Associates</p>
   </footer>
+
+  <!-- JavaScript for dynamic years -->
+  <script>
+    const startDate = new Date("2016-02-01");
+    const today = new Date();
+    let years = today.getFullYear() - startDate.getFullYear();
+    const m = today.getMonth() - startDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < startDate.getDate())) {
+      years--;
+    }
+    document.getElementById("years").textContent = years + "+";
+  </script>
 </body>
 </html>
