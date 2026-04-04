@@ -61,8 +61,7 @@ body {
   font-family: var(--heading-font);
   font-weight: bold;
   color: #23282e;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
   letter-spacing: .2px;
 }
 .logo-text p {
@@ -75,10 +74,12 @@ body {
 
 /* ----- Navigation & Dropdowns ----- */
 nav ul.menu {
-  display: flex;
-  align-items: center;
-  gap: 15px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* horizontal layout */
+  align-items: center;
+  gap: 20px;
 }
 nav ul li {
   position: relative;
@@ -89,18 +90,16 @@ nav ul li a {
   font-weight: 500;
   font-size: 1rem;
   font-family: 'Lato', Arial, sans-serif;
-  padding: 6px 20px;
+  padding: 8px 18px;
   border-radius: 8px;
   transition: background 0.16s, color 0.16s;
-  position: relative;
   display: inline-block;
 }
 nav ul li a.contact-button {
   background: var(--main-blue);
   color: #fff !important;
   font-weight: 700;
-  padding: 12px 29px;
-  margin-left: 16px;
+  padding: 10px 24px;
   border-radius: 10px;
   box-shadow: 0 2px 8px #d3e2ff66;
   border: none;
@@ -116,13 +115,8 @@ nav ul li a.contact-button:hover {
 }
 
 /* --- DROPDOWN ---- */
-.dropdown {
-  position: relative;
-}
-.arrow {
-  font-size: 0.8em;
-  margin-left: 5px;
-}
+.dropdown { position: relative; }
+.arrow { font-size: 0.8em; margin-left: 5px; }
 .dropdown-content {
   display: none;
   position: absolute;
@@ -134,30 +128,19 @@ nav ul li a.contact-button:hover {
   z-index: 20;
   padding: 12px 0;
 }
-.dropdown-content li {
-  display: block;
-}
 .dropdown-content li a {
   padding: 11px 24px;
   display: block;
   color: #222;
   font-weight: 450;
-  border-radius: 0;
   border-bottom: 1px solid #f4f7ff;
-  background: none;
 }
 .dropdown-content li a:hover {
   background: #e8f2ff;
   color: var(--main-blue);
 }
-/* Show dropdown on hover (desktop) */
-.dropdown:hover > .dropdown-content {
-  display: block;
-}
-/* For mobile: show when .show is added by JS */
-.dropdown-content.show {
-  display: block;
-}
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-content { display: block; }
 
 /* ===============================
    HERO SECTION
@@ -208,7 +191,6 @@ nav ul li a.contact-button:hover {
   max-width: 540px;
   font-weight: 400;
 }
-
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -234,9 +216,7 @@ nav ul li a.contact-button:hover {
   border: none;
   box-shadow: 0 2px 10px #d3e2ff57;
 }
-.button:hover, .button:focus {
-  background: var(--main-blue-dark);
-}
+.button:hover, .button:focus { background: var(--main-blue-dark); }
 .button-outline {
   background: #fff;
   color: var(--main-blue);
@@ -250,13 +230,7 @@ nav ul li a.contact-button:hover {
 /* ===============================
    INFOCARD (Home Hero Right)
    =============================== */
-.hero-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  position: relative;
-  min-width: 330px;
-}
+.hero-right { flex: 1; display: flex; align-items: center; position: relative; min-width: 330px; }
 .infocard {
   background: #fff;
   border-radius: 20px;
@@ -281,67 +255,283 @@ nav ul li a.contact-button:hover {
   box-shadow: 0 13px 32px #257cff31;
   z-index: 0;
 }
-.infocard-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 15px;
-  position: relative;
-  z-index: 2;
-}
+.infocard-row { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; position: relative; z-index: 2; }
 .infocard-row:last-of-type { margin-bottom: 0; }
 .infocard-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #eaf3fe;
-  color: var(--main-blue);
-  margin-top: 2px;
-  font-size: 1.7rem;
-  flex-shrink: 0;
-}
-.infocard-row-title {
-  font-weight: 700;
-  font-size: 1.17rem;
+  width: 38px; height: 38px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  background: #eaf3fe; color: var(--main-blue);
+Perfect — let’s organize your **full CSS file** into two clearly labeled parts so you can copy them in sequence. This is the complete stylesheet, merged and updated so your navigation looks like your desired desktop screenshot (horizontal bar with “Home, About ▼, Services ▼, Our Team, Contact Us” aligned neatly, with “Contact Us” as a blue button).
+
+---
+
+## 🎯 Part‑1 (Global, Header, Hero, Infocard, Stats)
+
+```css
+/* ===============================
+   GLOBAL RESET & BASE TYPOGRAPHY
+   =============================== */
+*, *::before, *::after {
   margin: 0;
-  color: #23233e;
-  font-family: var(--heading-font);
+  padding: 0;
+  box-sizing: border-box;
 }
-.infocard-row-desc {
-  font-weight: 500;
-  margin: 0;
-  color: #526fa8;
-  font-size: 0.94rem;
-  letter-spacing: 0.5px;
-}
-.infocard-row[style] {
-  background: #eaf7fe !important;
-  border-radius: 9px;
-  padding: 10px !important;
-}
-.infocard-commit {
-  background: #eaf7fe;
-  padding: 15px 18px 12px 18px;
-  border-radius: 10px;
-  z-index: 2;
-}
-.infocard-commit-title {
-  margin: 0 0 7px 0;
-  font-weight: 700;
-  color: #2b476c;
-  font-size: 1.07rem;
-  font-family: var(--heading-font);
-}
-.infocard-commit-desc {
-  margin: 0;
-  font-size: 0.99rem;
-  color: #557;
-  font-weight: 500;
+:root {
+  --main-blue: #257cff;
+  --main-blue-dark: #1766c2;
+  --main-bg-gradient: linear-gradient(120deg, #f4faff 65%, #eaf3ff 100%);
+  --muted-txt: #54587a;
+  --heading-font: 'Montserrat', 'Lato', Arial, sans-serif;
+  --footer-bg: #fff;
+  --footer-txt: #2e385a;
 }
 
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.53;
+  color: #25294a;
+  background: var(--main-bg-gradient);
+  min-height: 100vh;
+}
+
+/* ===============================
+   HEADER, LOGO & MENU
+   =============================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 56px 18px 56px;
+  background: #fff;
+  box-shadow: 0 1px 0 #e7f0ff;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.logo-box {
+  background: var(--main-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-family: var(--heading-font);
+  box-shadow: 0 4px 24px rgba(37,124,255,0.09);
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+.logo-text h1 {
+  font-size: 1.46rem;
+  font-family: var(--heading-font);
+  font-weight: bold;
+  color: #23282e;
+  margin: 0;
+  letter-spacing: .2px;
+}
+.logo-text p {
+  font-size: 0.97rem;
+  margin: 0;
+  color: #595985;
+  font-weight: 400;
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+/* ----- Navigation & Dropdowns ----- */
+nav ul.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* horizontal layout */
+  align-items: center;
+  gap: 20px;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #23282e;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Lato', Arial, sans-serif;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: background 0.16s, color 0.16s;
+  display: inline-block;
+}
+nav ul li a.contact-button {
+  background: var(--main-blue);
+  color: #fff !important;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #d3e2ff66;
+  border: none;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+  background: #f4faff;
+  color: var(--main-blue);
+}
+nav ul li a.contact-button:hover {
+  background: var(--main-blue-dark);
+  color: #fff !important;
+}
+
+/* --- DROPDOWN ---- */
+.dropdown { position: relative; }
+.arrow { font-size: 0.8em; margin-left: 5px; }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0; top: 100%;
+  min-width: 190px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(37,124,255,0.11);
+  border-radius: 8px;
+  z-index: 20;
+  padding: 12px 0;
+}
+.dropdown-content li a {
+  padding: 11px 24px;
+  display: block;
+  color: #222;
+  font-weight: 450;
+  border-bottom: 1px solid #f4f7ff;
+}
+.dropdown-content li a:hover {
+  background: #e8f2ff;
+  color: var(--main-blue);
+}
+/* Show dropdown on hover */
+.dropdown:hover > .dropdown-content { display: block; }
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero {
+  max-width: 1200px;
+  min-height: 520px;
+  margin: 0 auto;
+  padding: 64px 0 34px 0;
+  display: flex;
+  gap: 46px;
+}
+.hero-left {
+  flex: 1.2;
+  padding-left: 48px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.established-pill {
+  display: inline-block;
+  background: #e3eeff;
+  color: var(--main-blue);
+  border-radius: 16px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 16px #e3eeff;
+  letter-spacing: 0.2px;
+}
+.hero-title {
+  font-size: 3.0rem;
+  font-weight: 900;
+  line-height: 1.13;
+  margin: 0 0 4px 0;
+  font-family: var(--heading-font);
+}
+.hero-title .highlight {
+  display: block;
+  color: var(--main-blue);
+}
+.hero-desc {
+  font-size: 1.13rem;
+  color: var(--muted-txt);
+  margin: 22px 0 38px 0;
+  max-width: 540px;
+  font-weight: 400;
+}
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+.button,
+.button-outline {
+  font-family: var(--heading-font);
+  font-size: 1.07rem;
+  padding: 15px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  display: inline-block;
+  transition: background .18s, color .18s, box-shadow .16s;
+}
+.button {
+  background: var(--main-blue);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 10px #d3e2ff57;
+}
+.button:hover, .button:focus { background: var(--main-blue-dark); }
+.button-outline {
+  background: #fff;
+  color: var(--main-blue);
+  border: 2px solid var(--main-blue);
+}
+.button-outline:hover, .button-outline:focus {
+  background: #e3eeff;
+  color: var(--main-blue-dark);
+}
+
+/* ===============================
+   INFOCARD (Home Hero Right)
+   =============================== */
+.hero-right { flex: 1; display: flex; align-items: center; position: relative; min-width: 330px; }
+.infocard {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 34px 0 rgba(37,124,255,0.13), 0 1px 9px #e0eafd;
+  padding: 36px 36px 18px 36px;
+  margin: 0 10px 0 0;
+  width: 370px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.infocard-blur {
+  content: '';
+  position: absolute;
+  right: 5px; top: 22px;
+  width: 400px; height: 280px;
+  background: linear-gradient(115deg, #e3eeff 50%, #a7d2fd 100%);
+  border-radius: 24px;
+  filter: blur(1.6px);
+  box-shadow: 0 13px 32px #257cff31;
+  z-index: 0;
+}
+.infocard-row { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; position: relative; z-index: 2; }
+.infocard-row:last-of-type { margin-bottom: 0; }
+.infocard-icon {
+  width: 38px; height: 38px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  background: #eaf3fe; color;
+}
 /* ===============================
    STATS STRIP
    =============================== */
@@ -396,11 +586,8 @@ nav ul li a.contact-button:hover {
 /* ===============================
    PAGE: ABOUT, SERVICES, TEAM
    =============================== */
-main {
-  min-height: 60vh;
-}
+main { min-height: 60vh; }
 
-/* ---- About ---- */
 .about-section {
   max-width: 900px;
   margin: 2.5rem auto;
@@ -428,18 +615,10 @@ main {
   min-width: 230px;
   max-width: 320px;
 }
-.about-card h3 {
-  color: var(--main-blue);
-  margin-bottom: 0.7rem;
-}
-.about-card ul {
-  text-align: left; margin-top: .7rem;
-}
-.about-card li {
-  margin-bottom: .4rem;
-}
+.about-card h3 { color: var(--main-blue); margin-bottom: 0.7rem; }
+.about-card ul { text-align: left; margin-top: .7rem; }
+.about-card li { margin-bottom: .4rem; }
 
-/* ---- Services ---- */
 .services-section {
   max-width: 1000px;
   margin: 2.5rem auto;
@@ -466,14 +645,10 @@ main {
   max-width: 320px;
   text-align: left;
 }
-.service-card h3 {
-  color: var(--main-blue);
-  margin-bottom: .7rem;
-}
-.service-card ul { margin: .5rem 0;}
+.service-card h3 { color: var(--main-blue); margin-bottom: .7rem; }
+.service-card ul { margin: .5rem 0; }
 .service-card li { margin-bottom: .4rem; }
 
-/* ---- Team ---- */
 .team-section {
   max-width: 900px;
   margin: 2.5rem auto;
@@ -501,9 +676,7 @@ main {
   max-width: 320px;
   margin-bottom: 1rem;
 }
-.team-card h3 {
-  color: var(--main-blue);
-}
+.team-card h3 { color: var(--main-blue); }
 
 /* ---- Contact ---- */
 .contact-section {
@@ -567,9 +740,7 @@ footer {
   margin-top: 60px;
   font-size: 1rem;
 }
-.footer-links {
-  margin-bottom: 0.6rem;
-}
+.footer-links { margin-bottom: 0.6rem; }
 .footer-links a {
   color: var(--main-blue);
   margin: 0 .8rem;
@@ -591,21 +762,10 @@ footer {
     padding-left: 12px;
     min-height: unset;
   }
-  .hero-left {
-    padding-left: 9px;
-  }
-  .hero-right {
-    justify-content: flex-start;
-  }
-  .infocard {
-    margin: 32px 0 0 0;
-    width: 96vw;
-  }
-  .stats-strip {
-    flex-direction: column;
-    gap: 24px;
-    padding: 20px;
-  }
+  .hero-left { padding-left: 9px; }
+  .hero-right { justify-content: flex-start; }
+  .infocard { margin: 32px 0 0 0; width: 96vw; }
+  .stats-strip { flex-direction: column; gap: 24px; padding: 20px; }
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -614,15 +774,10 @@ footer {
   }
 }
 @media (max-width: 900px) {
-  nav ul.menu {
-    flex-wrap: wrap;
-    gap: 5px;
-  }
   .logo-box { font-size: 1.2rem; padding: 7px 12px; height: 36px; }
   .about-cards, .services-list, .team-list { flex-direction: column; align-items: stretch; }
   .infocard { min-width: 0; width: 95vw;}
   .stats-strip { max-width: 98vw; padding: 10px 2vw;}
-
   /* Dropdown on mobile (click to open) */
   .dropdown-content {
     position: static;
@@ -632,9 +787,7 @@ footer {
     border-radius: 0 0 12px 12px;
     display: none;
   }
-  .dropdown-content.show {
-    display: block;
-  }
+  .dropdown-content.show { display: block; }
 }
 @media (max-width: 700px) {
   .header { padding: 14px 2vw; }
