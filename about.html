@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Prakhar Gupta & Associates</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Prakhar Gupta & Associates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER, NAV w/ dropdown -->
   <header class="header">
     <div class="logo">
       <span class="logo-box">PGA</span>
@@ -22,54 +18,85 @@
       </div>
     </div>
     <nav>
-      <ul>
+      <ul class="menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li class="dropdown">
+          <a href="about.html" class="dropbtn">About <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-content">
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#awards">Awards</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="services.html" class="dropbtn">Services <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-content">
+            <li><a href="services.html#audit">Audit & Assurance</a></li>
+            <li><a href="services.html#tax">Tax Consulting</a></li>
+            <li><a href="services.html#advisory">Advisory</a></li>
+          </ul>
+        </li>
         <li><a href="team.html">Our Team</a></li>
-        <li><a href="contact.html" class="button">Contact Us</a></li>
+        <li><a href="contact.html" class="contact-button">Contact Us</a></li>
       </ul>
     </nav>
   </header>
-
-  <!-- Banner -->
-  <section class="banner">
-    <h2>About Us</h2>
-    <p>Delivering perfection in governance through assurance and advisory — with integrity, precision, and accountability at every stage.</p>
-  </section>
-
-  <!-- Content -->
-  <main class="about">
-    <section>
-      <h3>Our Firm</h3>
-      <p>Established in 2016, Prakhar Gupta & Associates is a multi‑partner Chartered Accountancy practice delivering Tax, Assurance, Regulatory, and Financial Advisory solutions. We are empanelled with ICAI and RBI, ensuring credibility and compliance at the highest standards.</p>
-    </section>
-
-    <section>
-      <h3>Our Mission</h3>
-      <p>To provide governance‑aligned advisory and assurance services that strengthen transparency, accountability, and trust in financial systems.</p>
-    </section>
-
-    <section>
-      <h3>Our Philosophy</h3>
-      <p>Compliance is governance, not merely obligation. We engineer frameworks that withstand scrutiny, mitigate risks, and provide litigation‑ready documentation backed by senior oversight.</p>
-    </section>
-
-    <section>
-      <h3>Our Values</h3>
-      <ul>
-        <li>Integrity and Professionalism</li>
-        <li>Precision in Reporting</li>
-        <li>Governance‑Aligned Advisory</li>
-        <li>Client‑Centric Solutions</li>
-      </ul>
+  <main>
+    <section class="about-section">
+      <h2>About Our Firm</h2>
+      <p>
+        Prakhar Gupta & Associates is a multi-partner Chartered Accountancy firm committed to offering comprehensive tax, assurance, regulatory, and advisory services with integrity and precision.
+      </p>
+      <div class="about-cards">
+        <div class="about-card" id="mission">
+          <h3>Mission</h3>
+          <p>Delivering excellence in financial governance through expertise, innovation, and strict compliance.</p>
+        </div>
+        <div class="about-card" id="vision">
+          <h3>Vision</h3>
+          <p>Empowering businesses and individuals with transparent and insightful professional solutions.</p>
+        </div>
+        <div class="about-card" id="awards">
+          <h3>Awards & Recognition</h3>
+          <ul>
+            <li>Empanelled with ICAI</li>
+            <li>Empanelled with RBI</li>
+            <li>Recognized by clients for outstanding service</li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
-
-  <!-- Footer -->
   <footer>
-    <p>Empanelled With ICAI And RBI</p>
-    <p>&copy; 2026 Prakhar Gupta & Associates</p>
+    <div class="footer-links">
+      <a href="https://www.google.com/maps/place/Prakhar+Gupta+%26+Associates/" target="_blank">Location</a>
+      <a href="https://wa.me/917017470581" target="_blank">WhatsApp Chat</a>
+      <a href="mailto:prakharGassociates@gmail.com?subject=Enquiry%20from%20website" target="_blank">Send Email</a>
+    </div>
+    <div>
+      &copy; <span id="copyrightYear"></span> Prakhar Gupta & Associates. Empanelled With ICAI And RBI.
+    </div>
   </footer>
+  <script>
+    document.getElementById("copyrightYear").textContent = new Date().getFullYear();
+    document.querySelectorAll('.dropbtn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        if (window.innerWidth < 900) {
+          e.preventDefault();
+          let dd = this.nextElementSibling;
+          if (dd && dd.classList.contains('dropdown-content')) {
+            dd.classList.toggle('show');
+          }
+        }
+      });
+    });
+    window.addEventListener('click', function(e) {
+      if (!e.target.matches('.dropbtn') && !e.target.matches('.arrow')) {
+        document.querySelectorAll('.dropdown-content.show').forEach(function(dd){
+          dd.classList.remove('show');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
