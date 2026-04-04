@@ -4,81 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prakhar Gupta & Associates</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
-<header class="header">
-  <div class="logo">
-    <span class="logo-box">PGA</span>
-    <div class="logo-text">
-      <h1>Prakhar Gupta & Associates</h1>
-      <p>Chartered Accountants</p>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-box">PGA</span>
+      <div class="logo-text">
+        <h1>Prakhar Gupta & Associates</h1>
+        <p>Chartered Accountants</p>
+      </div>
     </div>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html" class="services-button">Services</a></li>
-      <li><a href="team.html">Our Team</a></li>
-      <li><a href="contact.html" class="contact-button">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About &#9662;</a></li>
+        <li><a href="#">Services &#9662;</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#" class="contact-button">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
   
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-left">
-      <p class="established">Established 2016</p>
-      <h2>Excellence in Financial Governance</h2>
-      <p>A multi‑partner Chartered Accountancy firm delivering integrated tax, assurance, regulatory, and financial advisory services with precision and accountability.</p>
+      <span class="established-pill">Established 2016</span>
+      <h2 class="hero-title">
+        Excellence in <span class="highlight">Financial<br>Governance</span>
+      </h2>
+      <p class="hero-desc">
+        A multi‑partner Chartered Accountancy firm delivering integrated tax, assurance, regulatory, and financial advisory services with precision and accountability.
+      </p>
       <div class="hero-buttons">
-        <a href="contact.html" class="button">Get Started</a>
-        <a href="services.html" class="button-outline">Our Services</a>
+        <a href="#" class="button">Get Started &rarr;</a>
+        <a href="#" class="button-outline">Our Services</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="info-card">
-        <!-- Correct path: logo inside images folder -->
-        <img src="images/ca-logo.png" alt="CA India Logo" class="ca-logo">
-        
-        <h3 class="empanelled-heading">Empanelled With</h3>
-        <ul class="empanelled-list">
-          <li>&#10148; ICAI</li>
-          <li>&#10148; RBI</li>
-        </ul>
-
-        <div class="years-box">
-          <h3 class="industry-heading">Industry Standing</h3>
-          <h3 id="years">0+</h3>
-          <p>Years</p>
+      <div class="infocard">
+        <div class="infocard-blur"></div>
+        <div class="infocard-row">
+          <div class="infocard-icon">
+            <!-- Badge SVG -->
+            <svg fill="none" stroke="currentColor" stroke-width="2" width="28" height="28" viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="7" y="10" width="10" height="10" rx="2" /></svg>
+          </div>
+          <div>
+            <div class="infocard-row-title">Firm Registration</div>
+            <div class="infocard-row-desc">021714C</div>
+          </div>
+        </div>
+        <div class="infocard-row" style="background:#eaf7fe; border-radius:9px; padding:10px;">
+          <div class="infocard-icon">
+            <!-- Empanel SVG -->
+            <svg fill="none" stroke="currentColor" stroke-width="2" width="28" height="28" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21V19a7 7 0 0 1 13 0v2" /></svg>
+          </div>
+          <div>
+            <div class="infocard-row-title">RBI Empanelment</div>
+            <div class="infocard-row-desc">UCN: 1005429</div>
+          </div>
+        </div>
+        <div class="infocard-commit">
+          <div class="infocard-commit-title">Our Commitment</div>
+          <div class="infocard-commit-desc">
+            We deliver compliance with precision, advisory with clarity, and engagements with accountability.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="stat-box">
+      <span class="stat-icon">
+        <!-- RBI icon -->
+        <svg fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4"/><path d="M5.5 21V19a7 7 0 0 1 13 0v2"/>
+        </svg>
+      </span>
+      <div>
+        <span class="stat-num">RBI</span>
+        <span class="stat-label">Empanelled</span>
+      </div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-icon">
+        <!-- User group icon -->
+        <svg fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" viewBox="0 0 24 24">
+          <circle cx="7" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M2 21V19a7 7 0 0 1 7-7h6a7 7 0 0 1 7 7v2"/>
+        </svg>
+      </span>
+      <div>
+        <span class="stat-num">3+</span>
+        <span class="stat-label">Partners</span>
+      </div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-icon">
+        <!-- Chart line icon -->
+        <svg fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" viewBox="0 0 24 24">
+          <path d="M3 17l6-6 4 4 8-8"/>
+        </svg>
+      </span>
+      <div>
+        <span class="stat-num" id="years"></span>
+        <span class="stat-label">Years</span>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <p>Empanelled With ICAI And RBI</p>
     <p>&copy; 2026 Prakhar Gupta & Associates</p>
   </footer>
-
-  <!-- JavaScript for dynamic years -->
+  
+  <!-- DYNAMIC YEAR CALCULATION SCRIPT -->
   <script>
-    const startDate = new Date("2016-02-01");
-    const today = new Date();
-    let years = today.getFullYear() - startDate.getFullYear();
-    const m = today.getMonth() - startDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < startDate.getDate())) {
-      years--;
-    }
-    document.getElementById("years").textContent = years + "+";
+    // Calculate completed years and display as 'X+' if there's any extra month
+    (function() {
+      const start = new Date("2016-02-01");
+      const today = new Date();
+      let years = today.getFullYear() - start.getFullYear();
+      const monthDiff = today.getMonth() - start.getMonth();
+      const dayDiff = today.getDate() - start.getDate();
+      let hasPartYear = false;
+      // If current month < start month OR same month but day < start day, subtract 1 from years
+      if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        years--;
+        hasPartYear = monthDiff !== 0 || dayDiff !== 0;
+      } else {
+        hasPartYear = monthDiff > 0 || dayDiff > 0;
+      }
+      document.getElementById("years").textContent = years + (hasPartYear ? "+" : "");
+    })();
   </script>
 </body>
 </html>
