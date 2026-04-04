@@ -1,17 +1,19 @@
-/* === GLOBAL RESET === */
+/* ===============================
+   GLOBAL RESET & BASE TYPOGRAPHY
+   =============================== */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* === BASE TYPOGRAPHY & BG === */
 :root {
   --main-blue: #257cff;
   --main-blue-dark: #1766c2;
   --main-bg-gradient: linear-gradient(120deg, #f4faff 65%, #eaf3ff 100%);
   --muted-txt: #54587a;
   --heading-font: 'Montserrat', 'Lato', Arial, sans-serif;
+  --footer-bg: #fff;
+  --footer-txt: #2e385a;
 }
 
 body {
@@ -22,7 +24,9 @@ body {
   min-height: 100vh;
 }
 
-/* === HEADER === */
+/* ===============================
+   HEADER, LOGO & MENU
+   =============================== */
 .header {
   display: flex;
   align-items: center;
@@ -31,10 +35,9 @@ body {
   background: #fff;
   box-shadow: 0 1px 0 #e7f0ff;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
-/* === LOGO AREA === */
 .logo {
   display: flex;
   align-items: center;
@@ -60,7 +63,7 @@ body {
   color: #23282e;
   margin-bottom: 0;
   margin-top: 0;
-  letter-spacing: 0.2px;
+  letter-spacing: .2px;
 }
 .logo-text p {
   font-size: 0.97rem;
@@ -70,14 +73,15 @@ body {
   font-family: 'Lato', Arial, sans-serif;
 }
 
-/* === NAVIGATION === */
-nav ul {
+/* ----- Navigation & Dropdowns ----- */
+nav ul.menu {
   display: flex;
   align-items: center;
   gap: 15px;
   list-style: none;
-  margin: 0;
-  padding: 0;
+}
+nav ul li {
+  position: relative;
 }
 nav ul li a {
   text-decoration: none;
@@ -89,10 +93,11 @@ nav ul li a {
   border-radius: 8px;
   transition: background 0.16s, color 0.16s;
   position: relative;
+  display: inline-block;
 }
 nav ul li a.contact-button {
   background: var(--main-blue);
-  color: #fff;
+  color: #fff !important;
   font-weight: 700;
   padding: 12px 29px;
   margin-left: 16px;
@@ -100,20 +105,63 @@ nav ul li a.contact-button {
   box-shadow: 0 2px 8px #d3e2ff66;
   border: none;
 }
-nav ul li a.services-button {
-  /* add styling if services should stand out later */
-}
 nav ul li a:hover,
 nav ul li a:focus {
   background: #f4faff;
   color: var(--main-blue);
 }
-nav ul li a.contact-button:hover{
+nav ul li a.contact-button:hover {
   background: var(--main-blue-dark);
-  color: #fff;
+  color: #fff !important;
 }
 
-/* === HERO SECTION === */
+/* --- DROPDOWN ---- */
+.dropdown {
+  position: relative;
+}
+.arrow {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0; top: 100%;
+  min-width: 190px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(37,124,255,0.11);
+  border-radius: 8px;
+  z-index: 20;
+  padding: 12px 0;
+}
+.dropdown-content li {
+  display: block;
+}
+.dropdown-content li a {
+  padding: 11px 24px;
+  display: block;
+  color: #222;
+  font-weight: 450;
+  border-radius: 0;
+  border-bottom: 1px solid #f4f7ff;
+  background: none;
+}
+.dropdown-content li a:hover {
+  background: #e8f2ff;
+  color: var(--main-blue);
+}
+/* Show dropdown on hover (desktop) */
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+/* For mobile: show when .show is added by JS */
+.dropdown-content.show {
+  display: block;
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
 .hero {
   max-width: 1200px;
   min-height: 520px;
@@ -194,13 +242,14 @@ nav ul li a.contact-button:hover{
   color: var(--main-blue);
   border: 2px solid var(--main-blue);
 }
-.button-outline:hover,
-.button-outline:focus {
+.button-outline:hover, .button-outline:focus {
   background: #e3eeff;
   color: var(--main-blue-dark);
 }
 
-/* === HERO CARD === */
+/* ===============================
+   INFOCARD (Home Hero Right)
+   =============================== */
 .hero-right {
   flex: 1;
   display: flex;
@@ -293,7 +342,9 @@ nav ul li a.contact-button:hover{
   font-weight: 500;
 }
 
-/* === STATS STRIP === */
+/* ===============================
+   STATS STRIP
+   =============================== */
 .stats-strip {
   max-width: 1080px;
   margin: 38px auto 0 auto;
@@ -305,7 +356,6 @@ nav ul li a.contact-button:hover{
   border-radius: 8px;
   border-top: 1.5px solid #e3eeff;
 }
-
 .stat-box {
   display: flex;
   align-items: center;
@@ -343,33 +393,252 @@ nav ul li a.contact-button:hover{
   display: block;
 }
 
-/* === FOOTER === */
-footer {
+/* ===============================
+   PAGE: ABOUT, SERVICES, TEAM
+   =============================== */
+main {
+  min-height: 60vh;
+}
+
+/* ---- About ---- */
+.about-section {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+  text-align: center;
+}
+.about-section h2 {
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--main-blue);
+}
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.about-card {
   background: #fff;
-  color: #2e385a;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px #e3eeff69;
+  padding: 1.5rem 2.2rem;
+  min-width: 230px;
+  max-width: 320px;
+}
+.about-card h3 {
+  color: var(--main-blue);
+  margin-bottom: 0.7rem;
+}
+.about-card ul {
+  text-align: left; margin-top: .7rem;
+}
+.about-card li {
+  margin-bottom: .4rem;
+}
+
+/* ---- Services ---- */
+.services-section {
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+  text-align: center;
+}
+.services-section h2 {
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+  color: var(--main-blue);
+}
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.service-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px #e3eeff69;
+  padding: 1.5rem 2.2rem;
+  min-width: 230px;
+  max-width: 320px;
+  text-align: left;
+}
+.service-card h3 {
+  color: var(--main-blue);
+  margin-bottom: .7rem;
+}
+.service-card ul { margin: .5rem 0;}
+.service-card li { margin-bottom: .4rem; }
+
+/* ---- Team ---- */
+.team-section {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+  text-align: center;
+}
+.team-section h2 {
+  font-size: 2.1rem;
+  color: var(--main-blue);
+  margin-bottom: 2rem;
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.team-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px #e3eeff69;
+  padding: 1.2rem 2rem;
+  min-width: 220px;
+  max-width: 320px;
+  margin-bottom: 1rem;
+}
+.team-card h3 {
+  color: var(--main-blue);
+}
+
+/* ---- Contact ---- */
+.contact-section {
+  max-width: 540px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+  text-align: left;
+}
+.contact-section h2 {
+  text-align: center;
+  color: var(--main-blue);
+  margin-bottom: 2rem;
+}
+.contact-form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #e3eeff56;
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #2b476c;
+}
+.contact-form input, .contact-form textarea {
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid #e0eafd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #f7fafc;
+  margin-bottom: 14px;
+}
+.contact-form button[type=submit] {
+  margin-top: .7rem;
+  align-self: flex-end;
+  min-width: 120px;
+}
+.quick-contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.quick-contact-links a {
+  min-width: 140px;
+  text-align: center;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-txt);
   text-align: center;
   border-top: 1px solid #eaf7fe;
   padding: 26px 0 18px 0;
-  margin-top: 64px;
+  margin-top: 60px;
   font-size: 1rem;
 }
+.footer-links {
+  margin-bottom: 0.6rem;
+}
+.footer-links a {
+  color: var(--main-blue);
+  margin: 0 .8rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .16s;
+}
+.footer-links a:hover {
+  color: var(--main-blue-dark);
+  text-decoration: underline;
+}
 
-/* === RESPONSIVE === */
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   =============================== */
 @media (max-width: 1200px) {
-  .hero { flex-direction: column; padding-left: 12px; min-height: unset; }
-  .hero-left { padding-left: 9px;}
-  .hero-right { justify-content: flex-start;}
-  .infocard { margin: 32px 0 0 0;}
-  .stats-strip { flex-direction: column; gap: 24px; padding: 20px;}
-  .header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 28px 20px; }
+  .hero {
+    flex-direction: column;
+    padding-left: 12px;
+    min-height: unset;
+  }
+  .hero-left {
+    padding-left: 9px;
+  }
+  .hero-right {
+    justify-content: flex-start;
+  }
+  .infocard {
+    margin: 32px 0 0 0;
+    width: 96vw;
+  }
+  .stats-strip {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 28px 20px;
+  }
+}
+@media (max-width: 900px) {
+  nav ul.menu {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .logo-box { font-size: 1.2rem; padding: 7px 12px; height: 36px; }
+  .about-cards, .services-list, .team-list { flex-direction: column; align-items: stretch; }
+  .infocard { min-width: 0; width: 95vw;}
+  .stats-strip { max-width: 98vw; padding: 10px 2vw;}
+
+  /* Dropdown on mobile (click to open) */
+  .dropdown-content {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    background: #f3f9ff;
+    border-radius: 0 0 12px 12px;
+    display: none;
+  }
+  .dropdown-content.show {
+    display: block;
+  }
 }
 @media (max-width: 700px) {
-  .header { padding: 17px 6vw; }
+  .header { padding: 14px 2vw; }
   .hero-left, .hero-right { padding-left: 0 !important; }
   .hero { max-width: 100vw; gap: 20px; }
-  .infocard { width: 90vw; min-width: 0; }
-  .stats-strip { max-width: 98vw; padding: 10px 2vw; }
+  main, .about-section, .services-section, .team-section, .contact-section { padding: 0 .6rem; }
 }
-
-/* === UTILITY === */
-.visually-hidden { position: absolute!important; width: 1px!important; height: 1px!important; overflow: hidden!important; clip: rect(1px,1px,1px,1px)!important; white-space: nowrap!important; }
